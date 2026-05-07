@@ -963,6 +963,210 @@
     text-align: center !important;
   }
 }
+    /* 新版手機比較表 */
+.loan-right {
+  width: 100% !important;
+  background: #ff9800 !important;
+  padding: 40px 20px !important;
+  box-sizing: border-box !important;
+}
+
+.compare-head {
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  gap: 12px !important;
+}
+
+.avatar-box {
+  width: 145px !important;
+  height: 145px !important;
+  font-size: 110px !important;
+  line-height: 145px !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
+}
+
+.question-box {
+  flex: 1 !important;
+  background: #ffffff !important;
+  color: #e76a5b !important;
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  text-align: center !important;
+  padding: 22px 15px !important;
+  border-radius: 10px !important;
+  margin-bottom: 10px !important;
+  box-shadow: 0 0 14px rgba(255, 255, 120, 0.9) !important;
+  position: relative !important;
+}
+
+.question-box::before {
+  content: "" !important;
+  position: absolute !important;
+  left: -22px !important;
+  bottom: 18px !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-top: 16px solid transparent !important;
+  border-bottom: 16px solid transparent !important;
+  border-right: 22px solid #ffffff !important;
+}
+
+.compare-table-box {
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  overflow: hidden !important;
+}
+
+.new-compare-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  table-layout: fixed !important;
+  background: transparent !important;
+}
+
+.new-compare-table th,
+.new-compare-table td {
+  border: 2px solid rgba(255,255,255,0.65) !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  padding: 12px 6px !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  white-space: normal !important;
+}
+
+.new-compare-table th {
+  background: #ffffff !important;
+  color: #777777 !important;
+}
+
+.new-compare-table th:first-child {
+  background: transparent !important;
+  border: none !important;
+}
+
+.brand-head {
+  background: #ffffff !important;
+  color: #111111 !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+.brand-logo-text {
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  color: #111111 !important;
+}
+
+.brand-sub-text {
+  font-size: 15px !important;
+  color: #555555 !important;
+  margin-top: 3px !important;
+}
+
+.item-name {
+  background: #fff1dc !important;
+  color: #e76a5b !important;
+  text-align: left !important;
+  padding-left: 16px !important;
+}
+
+.brand-cell {
+  background: #fff1dc !important;
+  color: #e76a5b !important;
+}
+
+.gray-cell {
+  background: #e9e9e9 !important;
+  color: #999999 !important;
+}
+
+.yellow-cell {
+  background: #fff8a8 !important;
+}
+
+.yes {
+  color: #f26a4f !important;
+  font-size: 34px !important;
+}
+
+.no,
+.maybe {
+  color: #999999 !important;
+  font-size: 34px !important;
+}
+
+/* 手機版 */
+@media (max-width: 768px) {
+
+  .loan-right {
+    padding: 35px 12px !important;
+  }
+
+  .compare-head {
+    max-width: 100% !important;
+    gap: 8px !important;
+    align-items: flex-end !important;
+  }
+
+  .avatar-box {
+    width: 90px !important;
+    height: 90px !important;
+    font-size: 70px !important;
+    line-height: 90px !important;
+  }
+
+  .question-box {
+    font-size: 18px !important;
+    padding: 14px 8px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .question-box::before {
+    left: -14px !important;
+    bottom: 14px !important;
+    border-top: 10px solid transparent !important;
+    border-bottom: 10px solid transparent !important;
+    border-right: 14px solid #ffffff !important;
+  }
+
+  .compare-table-box {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .new-compare-table {
+    width: 100% !important;
+    min-width: 0 !important;
+    table-layout: fixed !important;
+  }
+
+  .new-compare-table th,
+  .new-compare-table td {
+    font-size: 15px !important;
+    padding: 9px 3px !important;
+  }
+
+  .item-name {
+    padding-left: 6px !important;
+  }
+
+  .brand-logo-text {
+    font-size: 15px !important;
+  }
+
+  .brand-sub-text {
+    font-size: 11px !important;
+  }
+
+  .yes,
+  .no,
+  .maybe {
+    font-size: 26px !important;
+  }
+}
   </style>
 </head>
 
@@ -1093,83 +1297,90 @@
       <div class="side-label">銀行貸款</div>
     </div>
 
-    <div class="loan-right">
+   <div class="loan-right">
+
+  <div class="compare-head">
+    <div class="avatar-box">👨‍💼</div>
+
     <div class="question-box">
-  急需現金200萬，您該怎麼辦？
-</div>
+      急需現金200萬，您該怎麼辦？
+    </div>
+  </div>
 
-<div class="compare-table-box">
-  <table class="mobile-compare-table">
-    <thead>
-      <tr>
-        <th></th>
-        <th class="brand-col">
-          <div class="brand-name">FORBES</div>
-          <div class="brand-sub">富比士融資</div>
-        </th>
-        <th>其他借貸</th>
-        <th>銀行貸款</th>
-      </tr>
-    </thead>
+  <div class="compare-table-box">
+    <table class="new-compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="brand-head">
+            <div class="brand-logo-text">FORBES</div>
+            <div class="brand-sub-text">宏誠融資</div>
+          </th>
+          <th>其他借貸</th>
+          <th>銀行貸款</th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <tr>
-        <td>個人信貸</td>
-        <td class="yes">○</td>
-        <td class="no">×</td>
-        <td class="no">×</td>
-      </tr>
+      <tbody>
+        <tr>
+          <td class="item-name">個人信貸</td>
+          <td class="brand-cell yes">○</td>
+          <td class="gray-cell no">×</td>
+          <td class="gray-cell no">×</td>
+        </tr>
 
-      <tr>
-        <td>汽機車借款</td>
-        <td class="yes">○</td>
-        <td class="maybe">○</td>
-        <td class="no">×</td>
-      </tr>
+        <tr>
+          <td class="item-name">汽機車借款</td>
+          <td class="brand-cell yes">○</td>
+          <td class="gray-cell maybe">○</td>
+          <td class="gray-cell no">×</td>
+        </tr>
 
-      <tr>
-        <td>房屋二胎</td>
-        <td class="yes">○</td>
-        <td class="no">×</td>
-        <td class="no">×</td>
-      </tr>
+        <tr>
+          <td class="item-name">房屋二胎</td>
+          <td class="brand-cell yes">○</td>
+          <td class="gray-cell no">×</td>
+          <td class="gray-cell no">×</td>
+        </tr>
 
-      <tr>
-        <td>工商融資</td>
-        <td class="yes">○</td>
-        <td class="maybe">○</td>
-        <td class="maybe">○</td>
-      </tr>
+        <tr>
+          <td class="item-name">工商融資</td>
+          <td class="brand-cell yes">○</td>
+          <td class="gray-cell maybe">○</td>
+          <td class="gray-cell maybe">○</td>
+        </tr>
 
-      <tr>
-        <td>支票貼現</td>
-        <td class="yes">○</td>
-        <td class="no">×</td>
-        <td class="no">×</td>
-      </tr>
+        <tr>
+          <td class="item-name">支票貼現</td>
+          <td class="brand-cell yes">○</td>
+          <td class="gray-cell no">×</td>
+          <td class="gray-cell no">×</td>
+        </tr>
 
-      <tr>
-        <td>轉貸增貸</td>
-        <td class="yes">○</td>
-        <td class="no">×</td>
-        <td class="no">×</td>
-      </tr>
+        <tr>
+          <td class="item-name">轉貸增貸</td>
+          <td class="brand-cell yes">○</td>
+          <td class="gray-cell no">×</td>
+          <td class="gray-cell no">×</td>
+        </tr>
 
-      <tr>
-        <td>利率</td>
-        <td class="highlight">單利0.8%起</td>
-        <td>不透明</td>
-        <td>循環利息</td>
-      </tr>
+        <tr>
+          <td class="item-name yellow-cell">利率</td>
+          <td class="brand-cell yellow-cell">單利0.8%起</td>
+          <td class="gray-cell">不透明</td>
+          <td class="gray-cell">循環利息</td>
+        </tr>
 
-      <tr>
-        <td>實拿金額</td>
-        <td class="highlight">200萬</td>
-        <td>150萬</td>
-        <td>50萬</td>
-      </tr>
-    </tbody>
-  </table>
+        <tr>
+          <td class="item-name">實拿金額</td>
+          <td class="brand-cell">200萬</td>
+          <td class="gray-cell">150萬</td>
+          <td class="gray-cell">50萬</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>
 
      
