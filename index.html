@@ -934,19 +934,26 @@
     display: block !important;
   }
 
-  table {
-    width: 100% !important;
-    min-width: 600px;
+ table {
+  width: 100% !important;
+  min-width: 0 !important;
+  table-layout: fixed !important;
+}
+  th, td {
+  font-size: 12px !important;
+  padding: 6px 2px !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+}
   }
 
-  .table-wrap,
-  .compare-table,
-  .loan-table {
-    width: 100% !important;
-    overflow-x: auto !important;
-    display: block !important;
-  }
-
+ .table-wrap,
+.compare-table,
+.loan-table {
+  width: 100% !important;
+  overflow: hidden !important;
+  display: block !important;
+}
   .line-btn,
   .cta-btn,
   .btn-line {
