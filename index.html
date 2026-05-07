@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>宏誠融資｜資金規劃與信貸資訊說明</title>
+  <title>宏誠資金規劃｜資金規劃與信貸資訊說明</title>
+  <meta name="description" content="提供一般資金規劃、信貸資訊、車貸、房屋相關資金、工商資金與流程說明。實際條件依審核結果為準。">
+
   <style>
     * {
       box-sizing: border-box;
@@ -11,205 +13,545 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Microsoft JhengHei", Arial, sans-serif;
-      background: #f6f7f9;
+      font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
+      background: #f7f7f7;
       color: #222;
-      line-height: 1.7;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: #111827;
+      color: #fff;
+      font-size: 14px;
+      padding: 8px 7%;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     header {
-      background: #0f2f4a;
-      color: white;
-      padding: 18px 8%;
+      background: #ffffff;
+      color: #222;
+      padding: 16px 7%;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
+      box-shadow: 0 3px 18px rgba(0,0,0,.08);
     }
 
     .nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #0f2f4a;
     }
 
-    .nav a {
-      color: white;
-      text-decoration: none;
+    .logo span {
+      color: #ff8a00;
+    }
+
+    nav a {
+      color: #1f2937;
       margin-left: 18px;
       font-size: 15px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #ff8a00;
     }
 
     .hero {
-      background: linear-gradient(rgba(15,47,74,.82), rgba(15,47,74,.82)),
-        url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80");
+      min-height: 620px;
+      background:
+        linear-gradient(90deg, rgba(15,47,74,.95), rgba(15,47,74,.74), rgba(255,149,0,.45)),
+        url("https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1800&q=80");
       background-size: cover;
       background-position: center;
-      color: white;
-      text-align: center;
-      padding: 90px 8% 80px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 90px 7%;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.35);
+      padding: 7px 16px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+      font-size: 15px;
     }
 
     .hero h1 {
-      font-size: 38px;
-      margin-bottom: 18px;
+      font-size: 48px;
+      line-height: 1.25;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
     }
 
     .hero p {
       font-size: 20px;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
+      color: #f6f6f6;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .hero-point {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 14px;
+      padding: 13px;
+      text-align: center;
+      font-weight: 700;
     }
 
     .btn-group {
       display: flex;
       gap: 14px;
-      justify-content: center;
       flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      padding: 13px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 13px 26px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: .25s;
     }
 
-    .btn-line {
+    .btn-primary {
       background: #06c755;
-      color: white;
+      color: #fff;
     }
 
-    .btn-phone {
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(6,199,85,.35);
+    }
+
+    .btn-secondary {
       background: #ffb000;
-      color: #222;
+      color: #111;
+    }
+
+    .btn-outline {
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.6);
     }
 
     section {
-      padding: 60px 8%;
+      padding: 70px 7%;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 42px;
     }
 
     .section-title h2 {
-      font-size: 30px;
-      color: #0f2f4a;
-      margin-bottom: 8px;
+      font-size: 34px;
+      letter-spacing: 9px;
+      color: #222;
+      font-weight: 500;
     }
 
     .section-title p {
-      color: #666;
+      color: #ff8a00;
+      font-size: 16px;
+      margin-top: 8px;
     }
 
-    .notice {
-      background: #fff4e5;
-      border-left: 6px solid #ff9f1c;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 35px;
-      color: #5c3b00;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    .orange-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 20px;
+      margin-top: 8px;
+      color: #ff8a00;
     }
 
-    .card {
-      background: white;
-      padding: 24px;
-      border-radius: 14px;
-      box-shadow: 0 4px 18px rgba(0,0,0,.07);
+    .orange-line::before,
+    .orange-line::after {
+      content: "";
+      width: 230px;
+      height: 2px;
+      background: #ff8a00;
     }
 
-    .card h3 {
-      color: #0f2f4a;
+    .alert-section {
+      background: #fff;
+      padding: 34px 7%;
+    }
+
+    .alert-box {
+      max-width: 1160px;
+      margin: auto;
+      background: #fff7e8;
+      border-left: 7px solid #ff8a00;
+      border-radius: 16px;
+      padding: 24px 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    .alert-box h3 {
+      color: #b45309;
       margin-bottom: 10px;
-      font-size: 21px;
+      font-size: 22px;
     }
 
-    .card p {
+    .alert-box ul {
+      padding-left: 22px;
+      color: #4b5563;
+    }
+
+    .service-section {
+      background: #ffffff;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px 34px;
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .service-card {
+      text-align: center;
+      padding: 10px 4px;
+    }
+
+    .service-card .icon {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 56px;
+      background: #f4f7fb;
+      border-radius: 24px;
+    }
+
+    .service-card h3 {
+      color: #ff8a00;
+      font-size: 18px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .service-card p {
+      color: #1f2937;
+      text-align: left;
+      font-size: 15.5px;
+    }
+
+    .compare-section {
+      background: linear-gradient(135deg, #ff9500, #ff8a00);
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .compare-title h2 {
+      font-size: 34px;
+      letter-spacing: 8px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .compare-title p {
+      font-size: 17px;
+      margin-bottom: 35px;
+    }
+
+    .speech-box {
+      display: inline-block;
+      background: white;
+      color: #ff6242;
+      border: 4px solid #ffd24a;
+      border-radius: 10px;
+      padding: 18px 42px;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    }
+
+    .compare-table-wrap {
+      overflow-x: auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 28px rgba(0,0,0,.2);
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    .compare-table {
+      width: 100%;
+      min-width: 920px;
+      border-collapse: collapse;
+      background: white;
+      color: #555;
+    }
+
+    .compare-table th {
+      background: #fff;
+      color: #ff6848;
+      padding: 14px 10px;
+      font-size: 16px;
+      border: 2px solid #fff;
+    }
+
+    .compare-table td {
+      padding: 18px 10px;
+      border: 2px solid #fff;
+      background: #eeeeee;
+      font-size: 18px;
+    }
+
+    .compare-table .highlight-row td {
+      background: #ffe8c8;
+      color: #ff6848;
+      font-weight: 800;
+    }
+
+    .compare-note {
+      max-width: 1040px;
+      margin: 18px auto 0;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .notice-section {
+      background: #ff9500;
+      color: #111;
+    }
+
+    .notice-title {
+      text-align: center;
+      color: white;
+      margin-bottom: 28px;
+    }
+
+    .notice-title h2 {
+      font-size: 34px;
+      letter-spacing: 10px;
+      font-weight: 400;
+    }
+
+    .notice-title p {
+      margin-top: 8px;
+      font-size: 17px;
+    }
+
+    .notice-text {
+      max-width: 1120px;
+      margin: 0 auto 35px;
+      font-size: 16px;
+      line-height: 1.95;
+      color: #1f2937;
+    }
+
+    .process-box {
+      background: #fff2bd;
+      border-radius: 22px;
+      padding: 28px 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1140px;
+      margin: auto;
+    }
+
+    .process-item {
+      text-align: center;
+    }
+
+    .process-icon {
+      font-size: 56px;
+      margin: 8px 0;
+    }
+
+    .process-item h3 {
+      font-size: 22px;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .process-item p {
       color: #555;
       font-size: 15px;
     }
 
-    .steps {
+    .premium-section {
+      background: #f7f7f7;
+    }
+
+    .premium-grid {
+      max-width: 1120px;
+      margin: auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 18px;
-      text-align: center;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
-    .step {
+    .premium-card {
       background: white;
-      padding: 28px 18px;
-      border-radius: 14px;
-      box-shadow: 0 4px 18px rgba(0,0,0,.07);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.07);
+      border-top: 5px solid #ff8a00;
     }
 
-    .step-num {
-      width: 45px;
-      height: 45px;
-      line-height: 45px;
-      background: #0f2f4a;
-      color: white;
-      border-radius: 50%;
-      margin: 0 auto 12px;
-      font-weight: bold;
+    .premium-card h3 {
+      color: #0f2f4a;
+      margin-bottom: 10px;
+      font-size: 22px;
     }
 
-    .cta {
-      background: #0f2f4a;
+    .premium-card p {
+      color: #4b5563;
+      font-size: 15.5px;
+    }
+
+    .cta-section {
+      background:
+        linear-gradient(rgba(15,47,74,.93), rgba(15,47,74,.93)),
+        url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
       color: white;
       text-align: center;
-      border-radius: 0;
     }
 
-    .cta h2 {
-      font-size: 30px;
+    .cta-section h2 {
+      font-size: 36px;
       margin-bottom: 12px;
+      letter-spacing: 3px;
     }
 
-    .faq {
-      max-width: 900px;
+    .cta-section p {
+      margin-bottom: 24px;
+      color: #e5e7eb;
+      font-size: 18px;
+    }
+
+    .faq-section {
+      background: #ffffff;
+    }
+
+    .faq-wrap {
+      max-width: 960px;
       margin: auto;
     }
 
     details {
-      background: white;
-      margin-bottom: 12px;
-      padding: 18px;
-      border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0,0,0,.05);
+      background: #f9fafb;
+      margin-bottom: 13px;
+      padding: 19px 22px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
     }
 
     summary {
-      font-weight: bold;
-      color: #0f2f4a;
       cursor: pointer;
+      font-weight: 800;
+      color: #0f2f4a;
+    }
+
+    details p {
+      margin-top: 10px;
+      color: #4b5563;
+    }
+
+    .about-contact {
+      background: #f7f7f7;
+    }
+
+    .two-col {
+      max-width: 1120px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+    }
+
+    .info-box {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    .info-box h3 {
+      font-size: 24px;
+      color: #0f2f4a;
+      margin-bottom: 12px;
+    }
+
+    .info-box p,
+    .info-box li {
+      color: #4b5563;
+      font-size: 15.5px;
+    }
+
+    .info-box ul {
+      list-style: none;
+    }
+
+    .rate-section {
+      background: #111827;
+      color: #d1d5db;
+      padding: 45px 7%;
+    }
+
+    .rate-section h3 {
+      color: #fff;
+      margin-bottom: 14px;
+      font-size: 22px;
+    }
+
+    .rate-section p {
+      font-size: 14px;
+      max-width: 1120px;
     }
 
     footer {
-      background: #111;
-      color: #ddd;
-      padding: 36px 8%;
+      background: #060b12;
+      color: #9ca3af;
+      padding: 24px 7%;
+      text-align: center;
       font-size: 14px;
-    }
-
-    footer h3 {
-      color: white;
-      margin-bottom: 10px;
     }
 
     .fixed-buttons {
@@ -219,16 +561,16 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      z-index: 99;
+      z-index: 999;
     }
 
     .fixed-buttons a {
       padding: 12px 18px;
       border-radius: 999px;
-      text-decoration: none;
       color: white;
-      font-weight: bold;
-      box-shadow: 0 4px 15px rgba(0,0,0,.2);
+      font-weight: 800;
+      box-shadow: 0 6px 18px rgba(0,0,0,.25);
+      text-align: center;
     }
 
     .fixed-line {
@@ -239,23 +581,91 @@
       background: #ff8c00;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 980px) {
       .hero h1 {
-        font-size: 30px;
+        font-size: 38px;
+      }
+
+      .hero-points,
+      .premium-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .process-box {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .orange-line::before,
+      .orange-line::after {
+        width: 85px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .top-bar {
+        font-size: 13px;
+      }
+
+      header {
+        padding: 14px 5%;
+      }
+
+      nav a {
+        margin: 6px 8px 0 0;
+        display: inline-block;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 70px 5%;
+      }
+
+      .hero h1 {
+        font-size: 31px;
       }
 
       .hero p {
         font-size: 17px;
       }
 
-      .nav {
-        display: block;
-        text-align: center;
+      .hero-points,
+      .service-grid,
+      .process-box {
+        grid-template-columns: 1fr;
       }
 
-      .nav a {
-        display: inline-block;
-        margin: 8px;
+      section {
+        padding: 52px 5%;
+      }
+
+      .section-title h2,
+      .compare-title h2,
+      .notice-title h2 {
+        font-size: 27px;
+        letter-spacing: 5px;
+      }
+
+      .orange-line::before,
+      .orange-line::after {
+        width: 45px;
+      }
+
+      .speech-box {
+        font-size: 18px;
+        padding: 14px 20px;
+      }
+
+      .fixed-buttons {
+        left: 12px;
+        right: 12px;
+        bottom: 10px;
+        flex-direction: row;
+      }
+
+      .fixed-buttons a {
+        flex: 1;
       }
     }
   </style>
@@ -263,154 +673,342 @@
 
 <body>
 
-<header>
-  <div class="nav">
-    <div class="logo">宏誠融資</div>
-    <nav>
-      <a href="#service">服務項目</a>
-      <a href="#process">申請流程</a>
-      <a href="#faq">常見問題</a>
-      <a href="#contact">聯絡我們</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <h1>資金規劃與信貸資訊說明</h1>
-  <p>協助您了解不同資金安排方式與申請流程，先了解，再評估。</p>
-  <div class="btn-group">
-    <a class="btn btn-line" href="https://line.me/R/ti/p/你的LINEID">LINE 線上諮詢</a>
-    <a class="btn btn-phone" href="tel:你的電話">立即來電</a>
-  </div>
-</section>
-
-<section id="service">
-  <div class="section-title">
-    <h2>服務項目</h2>
-    <p>安心、清楚、依流程說明</p>
+  <div class="top-bar">
+    <div>資金規劃與信貸資訊說明｜流程透明・專人說明</div>
+    <div>客服專線：請填入你的電話　｜　LINE：請填入你的 LINE ID</div>
   </div>
 
-  <div class="notice">
-    <strong>安全提醒：</strong><br>
-    本服務為一般資金規劃與資訊說明，不會要求您操作 ATM、不會要求提供提款卡或存摺，也不會預收任何不明費用。
+  <header>
+    <div class="nav">
+      <div class="logo">宏誠<span>資金規劃</span></div>
+      <nav>
+        <a href="#home">首頁</a>
+        <a href="#service">服務項目</a>
+        <a href="#compare">資金需求</a>
+        <a href="#notice">申請須知</a>
+        <a href="#faq">常見問題</a>
+        <a href="#contact">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="tag">專業資訊整理｜安全提醒｜流程說明</div>
+      <h1>資金規劃不用急著申請，先了解方向更重要</h1>
+      <p>
+        提供一般資金規劃與信貸資訊說明，協助您了解個人信貸、車貸、房屋相關資金、
+        工商資金與債務整合等可能方向。
+      </p>
+
+      <div class="hero-points">
+        <div class="hero-point">專人說明</div>
+        <div class="hero-point">流程清楚</div>
+        <div class="hero-point">安全提醒</div>
+      </div>
+
+      <div class="btn-group">
+        <a class="btn btn-primary" href="https://line.me/R/ti/p/你的LINEID">LINE 線上諮詢</a>
+        <a class="btn btn-secondary" href="tel:你的電話">立即來電</a>
+        <a class="btn btn-outline" href="#service">查看服務項目</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="alert-section">
+    <div class="alert-box">
+      <h3>貼心安全提醒</h3>
+      <ul>
+        <li>本服務為一般資金規劃與信貸資訊說明，實際條件依審核結果為準。</li>
+        <li>不會要求操作 ATM、不會要求提供提款卡或存摺、不會要求預繳不明費用。</li>
+        <li>不保證核准、不保證額度、不做誇大承諾，申請前建議先了解自身條件與流程。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="service-section" id="service">
+    <div class="section-title">
+      <h2>服 務 項 目</h2>
+      <div class="orange-line">安心・可靠・流程清楚</div>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="icon">🏠</div>
+        <h3>個人信貸資訊</h3>
+        <p>協助了解個人資金需求、申請流程、基本條件與可準備資料。</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🚗</div>
+        <h3>汽車貸款說明</h3>
+        <p>汽車、自用車、貸款車相關資金規劃方向與流程說明。</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🏍️</div>
+        <h3>機車貸款說明</h3>
+        <p>協助了解機車相關資金安排方式、資料準備與注意事項。</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🏢</div>
+        <h3>房屋相關資金</h3>
+        <p>房屋相關資金需求，可先了解可能方向與基本流程。</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🏭</div>
+        <h3>工商資金規劃</h3>
+        <p>中小企業週轉、營運資金與申請方向的資訊整理。</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">📝</div>
+        <h3>支票貼現說明</h3>
+        <p>協助了解支票相關資金安排方式與流程注意事項。</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">📄</div>
+        <h3>債務整合資訊</h3>
+        <p>針對現有負債狀況，協助整理可能的規劃方向。</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">💎</div>
+        <h3>精品資產參考</h3>
+        <p>名錶、精品、3C 等資產需求，可先了解基本流程與說明。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="compare-section" id="compare">
+    <div class="compare-title">
+      <h2>生活中是否有資金安排需求？</h2>
+      <p>先了解方向，再評估適合方式</p>
+    </div>
+
+    <div class="speech-box">
+      想了解不同資金方式，該怎麼開始？
+    </div>
+
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>個人信貸</th>
+            <th>汽車貸款</th>
+            <th>房屋相關</th>
+            <th>工商資金</th>
+            <th>支票貼現</th>
+            <th>債務整合</th>
+            <th>條件說明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td>資訊說明</td>
+            <td>○</td>
+            <td>○</td>
+            <td>○</td>
+            <td>○</td>
+            <td>○</td>
+            <td>○</td>
+            <td>依個人條件評估</td>
+          </tr>
+          <tr>
+            <td>一般詢問</td>
+            <td>○</td>
+            <td>○</td>
+            <td>△</td>
+            <td>○</td>
+            <td>△</td>
+            <td>△</td>
+            <td>需先了解資料</td>
+          </tr>
+          <tr>
+            <td>流程協助</td>
+            <td>○</td>
+            <td>○</td>
+            <td>○</td>
+            <td>○</td>
+            <td>○</td>
+            <td>○</td>
+            <td>由專人說明</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="compare-note">
+      ※ 本表僅為一般資訊整理，實際條件、額度、利率、費用與結果，仍依各單位審核為準。
+    </p>
+  </section>
+
+  <section class="notice-section" id="notice">
+    <div class="notice-title">
+      <h2>申 請 前 須 知</h2>
+      <p>資訊透明・流程清楚・安全提醒</p>
+    </div>
+
+    <div class="notice-text">
+      <p>
+        在進行任何資金規劃前，建議先了解自身條件、可準備資料與可能流程。
+        我們提供一般資金規劃與信貸資訊說明，協助您整理方向，
+        但不保證核准、不保證額度，實際條件仍需依審核結果為準。
+      </p>
+
+      <p>
+        【安全提醒】本服務不會要求操作 ATM、不會要求提供提款卡或存摺，
+        也不會要求預繳不明費用。若有任何疑問，請先向專人確認。
+      </p>
+    </div>
+
+    <div class="process-box">
+      <div class="process-item">
+        <div class="process-icon">☎️</div>
+        <h3>1. 線上詢問</h3>
+        <p>留下需求，先了解基本方向。</p>
+      </div>
+
+      <div class="process-item">
+        <div class="process-icon">👩‍💼</div>
+        <h3>2. 專人說明</h3>
+        <p>依照情況說明可參考方式。</p>
+      </div>
+
+      <div class="process-item">
+        <div class="process-icon">🧮</div>
+        <h3>3. 條件評估</h3>
+        <p>確認資料與可能申請流程。</p>
+      </div>
+
+      <div class="process-item">
+        <div class="process-icon">📄</div>
+        <h3>4. 後續安排</h3>
+        <p>實際結果依審核為準。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-section">
+    <div class="section-title">
+      <h2>專 業 說 明</h2>
+      <div class="orange-line">先了解・再評估・更安心</div>
+    </div>
+
+    <div class="premium-grid">
+      <div class="premium-card">
+        <h3>資料先整理</h3>
+        <p>申請前先確認自身條件、收入狀況、負債概況與可準備資料，降低盲目申請的風險。</p>
+      </div>
+
+      <div class="premium-card">
+        <h3>流程更清楚</h3>
+        <p>由專人協助說明一般流程、常見問題與注意事項，讓您知道下一步該怎麼做。</p>
+      </div>
+
+      <div class="premium-card">
+        <h3>條件依審核</h3>
+        <p>所有條件、額度、利率與結果，皆依各金融機構或合作單位審核結果為準。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>需要先了解資金方向嗎？</h2>
+    <p>不用急著申請，先了解自己的條件與可能方式。</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a class="btn btn-primary" href="https://line.me/R/ti/p/你的LINEID">加入 LINE 諮詢</a>
+      <a class="btn btn-secondary" href="tel:你的電話">立即來電</a>
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <div class="section-title">
+      <h2>常 見 問 題</h2>
+      <div class="orange-line">申請前可先了解</div>
+    </div>
+
+    <div class="faq-wrap">
+      <details>
+        <summary>Q：這裡是銀行嗎？</summary>
+        <p>A：本頁提供一般資金規劃與信貸資訊說明，實際申請條件與結果，依各金融機構或合作單位審核為準。</p>
+      </details>
+
+      <details>
+        <summary>Q：會保證核准或保證額度嗎？</summary>
+        <p>A：不會。本服務不保證核准、不保證額度，所有結果需依照實際審核條件評估。</p>
+      </details>
+
+      <details>
+        <summary>Q：需要先付款嗎？</summary>
+        <p>A：不會要求預繳不明費用，也不會要求操作 ATM 或提供提款卡、存摺。</p>
+      </details>
+
+      <details>
+        <summary>Q：信用曾有狀況可以先詢問嗎？</summary>
+        <p>A：可以先協助了解現況與可能方向，但實際條件仍依審核結果為準。</p>
+      </details>
+
+      <details>
+        <summary>Q：諮詢資料會保密嗎？</summary>
+        <p>A：基本諮詢內容僅作為資訊說明與流程溝通使用，建議不要提供不必要的敏感資料。</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="about-contact" id="contact">
+    <div class="two-col">
+      <div class="info-box">
+        <h3>關於宏誠資金規劃</h3>
+        <p>
+          宏誠資金規劃以「資訊清楚、流程透明、安全提醒」為核心，
+          提供一般資金規劃與信貸資訊說明。協助使用者在申請前，
+          先了解自身條件、資料準備與可能方向，避免盲目申請。
+        </p>
+        <br>
+        <p>
+          本站內容僅供一般資訊參考，不構成保證核准、保證額度或任何金融承諾。
+          實際條件、費用、利率與結果，依各金融機構或合作單位審核規定為準。
+        </p>
+      </div>
+
+      <div class="info-box">
+        <h3>聯絡方式</h3>
+        <ul>
+          <li>電話：你的電話</li>
+          <li>LINE：你的 LINE ID</li>
+          <li>服務方式：線上資訊說明</li>
+          <li>服務地區：全台皆可先線上了解</li>
+          <li>Email：你的Email</li>
+        </ul>
+        <br>
+        <a class="btn btn-primary" href="https://line.me/R/ti/p/你的LINEID">LINE 線上諮詢</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="rate-section">
+    <h3>額度、利率與費用說明</h3>
+    <p>
+      本站提供一般資金規劃與信貸資訊說明，實際額度、利率、費用、還款期限與審核結果，
+      皆依各金融機構或合作單位之規定與個人條件評估為準。本頁不提供保證核准、
+      保證額度、保證利率或任何誇大承諾。申請前請確認合約內容、費用項目與自身還款能力。
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 宏誠資金規劃 All Rights Reserved.</p>
+    <p>本網站內容為一般資訊整理與流程說明，實際條件依審核結果為準。</p>
+  </footer>
+
+  <div class="fixed-buttons">
+    <a class="fixed-line" href="https://line.me/R/ti/p/你的LINEID">LINE</a>
+    <a class="fixed-phone" href="tel:你的電話">電話</a>
   </div>
-
-  <div class="cards">
-    <div class="card">
-      <h3>個人信貸資訊</h3>
-      <p>協助了解個人信貸、小額資金需求與基本申請流程。</p>
-    </div>
-
-    <div class="card">
-      <h3>汽機車貸款說明</h3>
-      <p>提供汽車、機車相關資金規劃方向與條件說明。</p>
-    </div>
-
-    <div class="card">
-      <h3>房屋貸款方向</h3>
-      <p>協助了解房屋相關資金安排方式與基本資料準備。</p>
-    </div>
-
-    <div class="card">
-      <h3>企業資金規劃</h3>
-      <p>提供企業週轉、資金安排與申請流程相關資訊。</p>
-    </div>
-
-    <div class="card">
-      <h3>債務整合說明</h3>
-      <p>協助了解不同負債狀況下，可先整理哪些方向。</p>
-    </div>
-
-    <div class="card">
-      <h3>特殊狀況初步了解</h3>
-      <p>如曾有信用紀錄或特殊狀況，可先了解現況與可能方向。</p>
-    </div>
-  </div>
-</section>
-
-<section id="process">
-  <div class="section-title">
-    <h2>簡單四步驟</h2>
-    <p>流程清楚，專人說明</p>
-  </div>
-
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <h3>線上詢問</h3>
-      <p>留下基本需求，由專人協助了解。</p>
-    </div>
-
-    <div class="step">
-      <div class="step-num">2</div>
-      <h3>條件說明</h3>
-      <p>依照您的情況說明可能方向。</p>
-    </div>
-
-    <div class="step">
-      <div class="step-num">3</div>
-      <h3>資料確認</h3>
-      <p>確認基本資料與申請流程。</p>
-    </div>
-
-    <div class="step">
-      <div class="step-num">4</div>
-      <h3>後續評估</h3>
-      <p>實際條件依審核結果為準。</p>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <h2>需要先了解資金方向嗎？</h2>
-  <p>不用急著申請，先了解自己的條件與可能方式。</p>
-  <br>
-  <a class="btn btn-line" href="https://line.me/R/ti/p/你的LINEID">加入 LINE 諮詢</a>
-</section>
-
-<section id="faq">
-  <div class="section-title">
-    <h2>常見問題</h2>
-    <p>申請前可先了解</p>
-  </div>
-
-  <div class="faq">
-    <details>
-      <summary>Q：這是銀行嗎？</summary>
-      <p>A：本頁提供資金規劃與信貸資訊說明，實際申請條件與結果，依各單位審核為準。</p>
-    </details>
-
-    <details>
-      <summary>Q：會保證過件嗎？</summary>
-      <p>A：不會保證核准、不保證額度。實際結果需依照審核條件評估。</p>
-    </details>
-
-    <details>
-      <summary>Q：需要先付款嗎？</summary>
-      <p>A：不會要求預繳不明費用，也不會要求操作 ATM 或提供提款卡。</p>
-    </details>
-
-    <details>
-      <summary>Q：信用有狀況可以先問嗎？</summary>
-      <p>A：可以先協助了解現況與可能方向，但實際條件仍依審核結果為準。</p>
-    </details>
-  </div>
-</section>
-
-<footer id="contact">
-  <h3>宏誠融資｜聯絡方式</h3>
-  <p>電話：你的電話</p>
-  <p>LINE：你的 LINE ID</p>
-  <p>服務地區：全台線上資訊說明</p>
-  <br>
-  <p>【聲明】本服務為資訊整理與流程說明，非保證核准、非保證額度。實際條件、利率、費用與審核結果，依各金融機構或合作單位規定為準。</p>
-  <p>© 2026 宏誠融資 All Rights Reserved.</p>
-</footer>
-
-<div class="fixed-buttons">
-  <a class="fixed-line" href="https://line.me/R/ti/p/你的LINEID">LINE</a>
-  <a class="fixed-phone" href="tel:你的電話">電話</a>
-</div>
 
 </body>
 </html>
