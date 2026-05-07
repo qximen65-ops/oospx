@@ -1,62 +1,416 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的網站</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>宏誠融資｜資金規劃與信貸資訊說明</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: "Microsoft JhengHei", Arial, sans-serif;
-      background: #f5f7fa;
+      background: #f6f7f9;
       color: #222;
+      line-height: 1.7;
     }
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #1f6feb, #4da3ff);
+
+    header {
+      background: #0f2f4a;
       color: white;
+      padding: 18px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    .hero h1 {
-      font-size: 34px;
-      margin-bottom: 15px;
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
-    .hero p {
-      font-size: 18px;
-      line-height: 1.8;
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
-    .section {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 28px;
-      background: #06c755;
+
+    .nav a {
       color: white;
       text-decoration: none;
-      border-radius: 999px;
+      margin-left: 18px;
+      font-size: 15px;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(15,47,74,.82), rgba(15,47,74,.82)),
+        url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 90px 8% 80px;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 28px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 8px;
+      text-decoration: none;
       font-weight: bold;
+    }
+
+    .btn-line {
+      background: #06c755;
+      color: white;
+    }
+
+    .btn-phone {
+      background: #ffb000;
+      color: #222;
+    }
+
+    section {
+      padding: 60px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-title h2 {
+      font-size: 30px;
+      color: #0f2f4a;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    .notice {
+      background: #fff4e5;
+      border-left: 6px solid #ff9f1c;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 35px;
+      color: #5c3b00;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.07);
+    }
+
+    .card h3 {
+      color: #0f2f4a;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 15px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+      text-align: center;
+    }
+
+    .step {
+      background: white;
+      padding: 28px 18px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.07);
+    }
+
+    .step-num {
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      background: #0f2f4a;
+      color: white;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      font-weight: bold;
+    }
+
+    .cta {
+      background: #0f2f4a;
+      color: white;
+      text-align: center;
+      border-radius: 0;
+    }
+
+    .cta h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .faq {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    details {
+      background: white;
+      margin-bottom: 12px;
+      padding: 18px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.05);
+    }
+
+    summary {
+      font-weight: bold;
+      color: #0f2f4a;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #111;
+      color: #ddd;
+      padding: 36px 8%;
+      font-size: 14px;
+    }
+
+    footer h3 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .fixed-buttons {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 99;
+    }
+
+    .fixed-buttons a {
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0,0,0,.2);
+    }
+
+    .fixed-line {
+      background: #06c755;
+    }
+
+    .fixed-phone {
+      background: #ff8c00;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .nav {
+        display: block;
+        text-align: center;
+      }
+
+      .nav a {
+        display: inline-block;
+        margin: 8px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <div class="hero">
-    <h1>歡迎來到我的網站</h1>
-    <p>這裡可以放你的工作介紹、服務內容、聯絡方式。</p>
-    <a class="btn" href="https://line.me/R/ti/p/你的LINEID">加入 LINE 了解更多</a>
+<header>
+  <div class="nav">
+    <div class="logo">宏誠融資</div>
+    <nav>
+      <a href="#service">服務項目</a>
+      <a href="#process">申請流程</a>
+      <a href="#faq">常見問題</a>
+      <a href="#contact">聯絡我們</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>資金規劃與信貸資訊說明</h1>
+  <p>協助您了解不同資金安排方式與申請流程，先了解，再評估。</p>
+  <div class="btn-group">
+    <a class="btn btn-line" href="https://line.me/R/ti/p/你的LINEID">LINE 線上諮詢</a>
+    <a class="btn btn-phone" href="tel:你的電話">立即來電</a>
+  </div>
+</section>
+
+<section id="service">
+  <div class="section-title">
+    <h2>服務項目</h2>
+    <p>安心、清楚、依流程說明</p>
   </div>
 
-  <div class="section">
-    <h2>服務內容</h2>
-    <p>這裡可以介紹你的網站內容，例如工作資訊、資金規劃說明、表單填寫、客服聯繫等。</p>
+  <div class="notice">
+    <strong>安全提醒：</strong><br>
+    本服務為一般資金規劃與資訊說明，不會要求您操作 ATM、不會要求提供提款卡或存摺，也不會預收任何不明費用。
   </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>個人信貸資訊</h3>
+      <p>協助了解個人信貸、小額資金需求與基本申請流程。</p>
+    </div>
+
+    <div class="card">
+      <h3>汽機車貸款說明</h3>
+      <p>提供汽車、機車相關資金規劃方向與條件說明。</p>
+    </div>
+
+    <div class="card">
+      <h3>房屋貸款方向</h3>
+      <p>協助了解房屋相關資金安排方式與基本資料準備。</p>
+    </div>
+
+    <div class="card">
+      <h3>企業資金規劃</h3>
+      <p>提供企業週轉、資金安排與申請流程相關資訊。</p>
+    </div>
+
+    <div class="card">
+      <h3>債務整合說明</h3>
+      <p>協助了解不同負債狀況下，可先整理哪些方向。</p>
+    </div>
+
+    <div class="card">
+      <h3>特殊狀況初步了解</h3>
+      <p>如曾有信用紀錄或特殊狀況，可先了解現況與可能方向。</p>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="section-title">
+    <h2>簡單四步驟</h2>
+    <p>流程清楚，專人說明</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>線上詢問</h3>
+      <p>留下基本需求，由專人協助了解。</p>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>條件說明</h3>
+      <p>依照您的情況說明可能方向。</p>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>資料確認</h3>
+      <p>確認基本資料與申請流程。</p>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>後續評估</h3>
+      <p>實際條件依審核結果為準。</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>需要先了解資金方向嗎？</h2>
+  <p>不用急著申請，先了解自己的條件與可能方式。</p>
+  <br>
+  <a class="btn btn-line" href="https://line.me/R/ti/p/你的LINEID">加入 LINE 諮詢</a>
+</section>
+
+<section id="faq">
+  <div class="section-title">
+    <h2>常見問題</h2>
+    <p>申請前可先了解</p>
+  </div>
+
+  <div class="faq">
+    <details>
+      <summary>Q：這是銀行嗎？</summary>
+      <p>A：本頁提供資金規劃與信貸資訊說明，實際申請條件與結果，依各單位審核為準。</p>
+    </details>
+
+    <details>
+      <summary>Q：會保證過件嗎？</summary>
+      <p>A：不會保證核准、不保證額度。實際結果需依照審核條件評估。</p>
+    </details>
+
+    <details>
+      <summary>Q：需要先付款嗎？</summary>
+      <p>A：不會要求預繳不明費用，也不會要求操作 ATM 或提供提款卡。</p>
+    </details>
+
+    <details>
+      <summary>Q：信用有狀況可以先問嗎？</summary>
+      <p>A：可以先協助了解現況與可能方向，但實際條件仍依審核結果為準。</p>
+    </details>
+  </div>
+</section>
+
+<footer id="contact">
+  <h3>宏誠融資｜聯絡方式</h3>
+  <p>電話：你的電話</p>
+  <p>LINE：你的 LINE ID</p>
+  <p>服務地區：全台線上資訊說明</p>
+  <br>
+  <p>【聲明】本服務為資訊整理與流程說明，非保證核准、非保證額度。實際條件、利率、費用與審核結果，依各金融機構或合作單位規定為準。</p>
+  <p>© 2026 宏誠融資 All Rights Reserved.</p>
+</footer>
+
+<div class="fixed-buttons">
+  <a class="fixed-line" href="https://line.me/R/ti/p/你的LINEID">LINE</a>
+  <a class="fixed-phone" href="tel:你的電話">電話</a>
+</div>
 
 </body>
 </html>
